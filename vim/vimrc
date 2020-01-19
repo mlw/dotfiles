@@ -1,0 +1,38 @@
+" vimrc
+
+let mapleader=","
+
+set hlsearch
+set number
+set ruler
+set wildmenu
+
+set tags=./tags,tags;
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
+
+" Create the home vim directory if it doesn't exist
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0750)
+endif
+" Create the undo directory if it doesn't exist
+if !isdirectory($HOME."/.vim/undodir")
+    call mkdir($HOME."/.vim/undodir", "", 0700)
+endif
+
+set undofile               " Persistent undo history
+set undodir=~/.vim/undodir " Set the undo dir
+set undolevels=1000        " Number of changes remembered
+set undoreload=10000       " Save whole buffer for undo when reloading
+
+nnoremap <leader><space> :nohlsearch<CR>
+
+" set cursorline " Show horizontal line
+set showmatch
+
+syntax on
+
+filetype plugin on
+filetype plugin indent on
