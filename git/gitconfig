@@ -3,3 +3,7 @@
 	email = <email>
 
 [core]
+	pager = less -F -X
+
+[pager]
+	branch = false
